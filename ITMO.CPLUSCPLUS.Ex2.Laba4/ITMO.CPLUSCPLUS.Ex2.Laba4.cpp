@@ -10,20 +10,62 @@ int main()
     system("chcp 1251");
     double x;
     double y;
-    cout << "Введите Х\n";
-    cin >> x;
-    cout << "Введите У\n";
-    cin >> y;
-    //реализовываем очки для записи
+
+    double score = 0;
+    int round = 0;
 
     // логика
-        if (x * x + y * y < 1 && y > 0)
-            cout << "\nТочка внутри\n"; // "внутри"
-        else if (x * x + y * y > 1 || y < 0)
-            cout << "\nТочка снаружи\n";// "снаружи"
-        else // "на границе"
-            cout << "\nНа границе\n";
-        return 0;
+
+    while (score <= 50 || round == 5)
+    {
+        cout << "Введите Х\n";
+        cin >> x;
+        cout << "Введите У\n";
+        cin >> y;
+        //реализовываем очки для записи
+        if (x * x + y * y <= 1)
+        {
+            score += 10;
+            round += 1;
+            cout << "\n10 баллов\n";
+        }
+        else if (x * x + y * y > 1 && x * x + y * y <= 2)
+        {
+            score += 5;
+            round += 1;
+            cout << "\n5 баллов\n";
+        }
+        else if (x * x + y * y > 2 && x * x + y * y <= 3)
+        {
+            score += 1;
+            round += 1;
+            cout << "\n1 балл\n";
+        }
+        else if (x * x + y * y > 3 && x * x + y * y <= 10)
+        {
+            round += 1;
+            cout << "\nвылет\n";
+        }
+           
+        
+            
+        if (score > 40 && round == 5)
+        {
+            cout << "\nРезультат " << score << " снайпер.";
+        }
+        else if (score <= 40 && score > 25 && round == 5)
+        {
+            cout << "\nРезультат " << score << " стрелок";
+        }
+        else if (score >= 25 && round == 5)
+        {
+            cout << "\nРезультат " << score << " Новичок";
+        }
+        
+    }
+
+    
+        
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

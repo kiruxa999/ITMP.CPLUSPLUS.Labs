@@ -9,16 +9,39 @@ int main()
 {
     system("chcp 1251");
     int s;
+    int a(10), b(5), c(2), d(1);
     cout << "Введите кол-во денег: ";
     cin >> s;
-    int a = 0;
-    int sum = 0;
-
-    a = s / 10;
-    
+    int ost;
+    int temp = 0;
 
 
-    cout << sum;
+
+    if (s % 10 != 0) {
+        temp = s / a;
+        cout << "Кол-во монет лимитом в 10 рублей: " << temp << "\n";
+        ost = s - temp * a;
+            if (ost % b != 0) {
+                temp = ost / b;
+                cout << "Кол-во монет лимитом в 5 рублей: " << temp << "\n";
+                ost = ost - temp * b;
+                    if (ost % c != 0) {
+                        temp = ost / c;
+                        cout << "Кол-во монет лимитом в 2 рублей: " << temp << "\n";
+                        ost = ost - temp * c;
+                        temp = ost / d;
+                        cout << "Кол-во монет лимитом в 1 рубль: " << temp << "\n";
+                    }
+                    else if (ost % c == 0) {
+                        temp = ost / c;
+                        cout << "Кол-во монет лимитом в 2 рублей: " << temp << "\n";
+                    }
+            }                
+    }
+    else if (s % 10 == 0){
+        temp = s / a;
+        cout << "Кол-во монет лимитом в 10 рублей: " << temp << "\n";
+    }
     return 0;
 }
 

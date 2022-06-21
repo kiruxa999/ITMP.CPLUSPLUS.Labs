@@ -4,10 +4,6 @@
 #include <iostream>
 #include <ctime>
 using namespace std;
-
-
-
-
 int main()
 {
     srand(time(NULL));
@@ -28,7 +24,8 @@ int main()
             cout << a << " * " << b << " = " << a * b << endl;
         }
         cout << "Count error: " << k << endl;
-        return 0;
+        
+        
     }
 }
 
