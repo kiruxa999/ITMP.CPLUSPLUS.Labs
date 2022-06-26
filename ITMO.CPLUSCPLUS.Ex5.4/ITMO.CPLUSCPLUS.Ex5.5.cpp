@@ -1,53 +1,62 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex5.4.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
+#include <ctime>
 using namespace std;
+#include <vector>
 
-
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
-}
-        
-
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
-    }
-}
 
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
+    srand(time(NULL));
+    int a, b, c;
+    int k = 0;
+    const int n = 10;
+    int mas[n];
+    vector<int> v1;
+    vector<int> v2;
 
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
+   
+
+    for (int i = 0; i <= n; i++)
+    {
+        // инициализация операндов случайными числами от 1 до 101
+        a = rand() % 10 + 1;
+        b = rand() % 10 + 1;
+        cout << a << " * " << b << " = ";
+        cin >> c;
+        mas[i] = c;
+
+        if (a * b != c)
+        {
+            v2.push_back(c);
+
+            k++; // операция «инкремент», аналогично: k = k + 1
+            cout << "Error! ";
+            cout << a << " * " << b << " = " << a * b << endl;
+        }
+        else
+        {
+            v1.push_back(c);
+        }
+
+
+        cout << "Count error: " << k << endl;
+    }
+    cout << "\nGood: ";
+    for (int i = 0; i < v1.size(); i++)
+    {
+        cout << v1[i] << ends;
+    }
+    cout << "\nBad: ";
+    for (int i = 0; i < v2.size(); i++)
+    {
+        cout << v2[i] << ends;
+    }
     
 }
-
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
 

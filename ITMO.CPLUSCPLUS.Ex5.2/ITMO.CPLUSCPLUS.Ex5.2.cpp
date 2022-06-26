@@ -1,51 +1,34 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex5.2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
 using namespace std;
-
-
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
-}
-        
-
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
-    }
-}
-
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
+    const int N = 10;
+    int a[N] = { 1, 25, 6, 32, 43, 5, 96, 23, 4, 55 };
+    int min = 0; // для записи минимального значения
+    int buf = 0; // для обмена значениями
+    for (int i = 0; i < N; i++)
+    {
+        min = i; // номер текущей ячейки, как ячейки с минимальным значением
+        // в цикле найдем реальный номер ячейки с минимальным значением
+        for (int j = i + 1; j < N; j++)
+            min = (a[j] < a[min]) ? j : min;
+        // перестановка этого элемента, поменяв его местами с текущим
+        if (i != min)
+        {
+            buf = a[i];
+            a[i] = a[min];
+            a[min] = buf;
+        }
+    }
 
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
-    
+    for (int i : a)
+        cout << i << '\t';
+
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

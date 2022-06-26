@@ -1,51 +1,32 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex5Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
+#include <vector>
 using namespace std;
 
+int* max_vect(int kc, int *a, int *b) {
+	vector <int> result;
+	mas[i] = c
+	if (kc)
 
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
+	//return result;
+
 }
-        
 
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
-    }
-}
 
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
-
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
-    
+	int a[] = { 1,2,3,4,5,6,7,2 };
+	int b[] = { 7,6,5,4,3,2,1,3 };
+	int kc = sizeof(a) / sizeof(a[0]); //Количество элементов массива
+	int* c; //Указатель на результирующий массив
+	c = max_vect(kc, a, b); //вызов функции для создания массива
+	for (int i = 0; i < kc; i++) //Вывод результата.
+		cout << c[i] << " ";
+	cout << endl;
+	delete[]c; //Возврат памяти.
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

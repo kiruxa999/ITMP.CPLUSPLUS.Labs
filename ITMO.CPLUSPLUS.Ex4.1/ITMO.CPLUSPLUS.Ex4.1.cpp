@@ -1,51 +1,46 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSPLUS.Ex4.1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
 using namespace std;
 
 
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
+
+void fum_value(double k, double x, double y)
+{
+    x = x + k;
+    y = y + k;
 }
-        
+void fum_ptr(double k, double* x, double* y)
+{
+    *x = *x + k;
+    *y = *y + k;
+}
+void fum_ref(double k, double& x, double& y)
+{
+    x = x + k;
+    y = y + k;
+}
 
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
-    }
+void print(double x, double y)
+{
+    cout << "x = " << x << "; y = " << y << endl;
 }
 
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
-
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
-    
+    double k = 2.5;
+    double xv = 10;
+    double yv = 10;
+    print(xv, yv);
+    fum_value(k, xv, yv); // Передача в функцию обычного параметра
+    print(xv, yv);
+    fum_ptr(k, &xv, &yv); // Передача в функцию параметра указателя
+    print(xv, yv);
+    fum_ref(k, xv, yv); // Передача в функцию параметра ссылки
+    print(xv, yv);
+    return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

@@ -1,51 +1,61 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex5.3.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
 using namespace std;
 
-
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
+void show_array(const int Arr[], const int N)
+{
+	for (int i = 0; i < N; i++)
+		cout << Arr[i] << " ";
+	cout << "\n";
 }
-        
 
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
-    }
+bool from_min(const int a, const int b)
+{
+	return a > b;
 }
+bool from_max(const int a, const int b)
+{
+	return a < b;
+}
+
+void bubble_sort(int Arr[], const int N, bool (*compare)(int a, int b))
+{
+	for (int i = 1; i < N; i++)
+	{
+		for (int j = 0; j < N - 1; j++)
+		{
+			if ((*compare)(Arr[j], Arr[j + 1])) swap(Arr[j], Arr[j + 1]);
+		}
+	}
+}
+
+
+
+
 
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
-
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
-    
+	system("chcp 1251");
+	const int N = 10;
+	int my_choose = 0;
+	int A[N] = { 9,8,7,6,1,2,3,5,4,9 };
+	cout << "1. Сортировать по возрастанию\n";
+	cout << "2. Сортировать по убыванию\n";
+	cin >> my_choose;
+	cout << "Исходные данные: ";
+	
+	switch (my_choose)
+	{
+	case 1: bubble_sort(A, N, from_min); break;
+	case 2: bubble_sort(A, N, from_max); break;
+	default: cout << "\rНеизвестная операция ";
+	}
+	show_array(A, N);
+	
+	return 0;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

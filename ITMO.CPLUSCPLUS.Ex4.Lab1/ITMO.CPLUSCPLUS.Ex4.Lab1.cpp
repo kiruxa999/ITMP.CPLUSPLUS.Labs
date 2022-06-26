@@ -1,51 +1,54 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex4.Lab1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
 using namespace std;
 
-
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
-}
-        
-
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
+int Myroot(double a, double b, double c, double& f, double& g) {
+    double d = (b * b) - (4 * a * c);
+    if (d > 0) 
     {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
+        f = (((-1 * b) + sqrt(a))) / 2 * a;
+        g = (((-1 * b) - sqrt(a))) / 2 * a;
+        cout << "x1 будет равен -   " << f << endl;
+        cout << "x2 будет равен -   " << g << endl;
+        cout << "1" << endl;  
     }
+
+    if (d = 0) {
+        f = d;
+        cout << "Оба корня совпадают" << "0" << endl;
+
+    }
+
+    if (d < 0) {
+        g = d;
+        cout << g << endl;
+        cout << "Корней нет" << "- 1" << endl;
+    }
+    return 0;
 }
 
 
 int main()
 {
     system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
+    double f = 0;
+    double d = 0;
 
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
+    cout << "\nВведите число a" << endl;
+    double a;
+    cin >> a;
     
+    cout << "\nВведите число b" << endl;
+    double b;
+    cin >> b;
+
+    cout << "\nВведите число c" << endl;
+    double c;
+    cin >> c;
+
+    Myroot(a,b,c,d,f);
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

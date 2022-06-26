@@ -1,51 +1,41 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSPLUS.Ex4.2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
 using namespace std;
 
+void swap(int*, int*);
+void swap(int&, int&);
 
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
+void swap(int* x, int* y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+
+    cout << *y;
 }
-        
+void swap(int& x, int& y)
+{
+    int temp;
+    temp = x;
+    x = y;
+    y = temp;
 
-int korenIter(int a) {
-    int x = a;
-    int x2;
-
-   
-    for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-
-
-
-        
-        return i;
-    }
+    cout << y;
 }
+
 
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
+    int x = 5, y = 10;
+    swap(&x, &y);
+    swap(x, y);
 
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
     
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
