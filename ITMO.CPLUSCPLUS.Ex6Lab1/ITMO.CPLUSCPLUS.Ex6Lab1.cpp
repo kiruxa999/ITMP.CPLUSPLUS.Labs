@@ -1,56 +1,22 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex6Lab1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include<cmath>
+#include <fstream>
 using namespace std;
-
-
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
-}
-        
-
-int korenIter(int a) {
-    int i;
-    int y, y1;
-  
-    y = a;
-    
-    do {
-        y1 = y;
-        y = 0.5 * (y + 3 * a / (2 * y * y + a / y));
-    } 
-    while (abs(y - y1) > 1 / 100000);
-    return y;
-
-
-    /*for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-        return i;
-    }*/
-}
 
 
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
-
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
-    
+    //int const n = 100;
+    //char* nums[n];
+    string abc;
+    ofstream versh("versh.txt");
+    cout << "Введите стихотворение" << endl;
+    cin >> abc;
+    versh << abc;
+    //if (abc == "*") {
+    versh.close();   
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

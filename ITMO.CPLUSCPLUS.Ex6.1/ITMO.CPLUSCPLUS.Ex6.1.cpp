@@ -1,56 +1,49 @@
-﻿// ITMO.CPLUSCPLUS.Ex3.Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex6.1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
+#include <fstream>
 #include<cmath>
 using namespace std;
 
-
-double korenPow(double a){
-    a = pow(a, 1.0 / 3);
-    return a;
-}
-        
-
-int korenIter(int a) {
-    int i;
-    int y, y1;
-  
-    y = a;
-    
-    do {
-        y1 = y;
-        y = 0.5 * (y + 3 * a / (2 * y * y + a / y));
-    } 
-    while (abs(y - y1) > 1 / 100000);
-    return y;
-
-
-    /*for (int i = 1; i < 10; i++)
-    {
-        while (x = a)
-        {
-            x = ((a / (i * i) + (2 * i)) / 3);
-        }
-        return i;
-    }*/
-}
-
-
 int main()
 {
-    system("chcp 1251");
-    
-     /*cout << "\nВведите число" << endl;
-     int a1;
-     cin >> a1;
-     cout << "\nКубический корень: " << korenPow(a1)<< endl;*/
+    double sum = 0;
+    int const n = 100;
+    double nums[n];
 
-     cout << "\nВведите число" << endl;
-     int a2;
-     cin >> a2;
-     cout << "\nКубический корень: " << korenIter(a2) << endl;
-    
+    for (int i = 0; i < n; i++)
+    {
+        nums[i] = (rand() % 100);
+    }
+
+    ofstream out("test", ios::out | ios::binary);
+    if (!out) {
+        cout << "Файл открыть невозможно\n";
+        return 1;
+    }
+
+    out.write((char*)nums, sizeof(nums));
+    out.close();
+
+
+    ifstream in("test", ios::in | ios::binary);
+    if (!in) {
+        cout << "Файл открыть невозможно";
+        return 1;
+    }
+
+    in.read((char*)&nums, sizeof(nums));
+
+    int k = sizeof(nums) / sizeof(double);
+    for (int i = 0; i < k; i++)
+    {
+        sum = sum + nums[i];
+        cout << nums[i] << ' ';
+    }
+    cout << "\nsum = " << sum << endl;
+
+    in.close();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
