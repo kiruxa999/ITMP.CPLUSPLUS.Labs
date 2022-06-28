@@ -5,41 +5,40 @@
 using namespace std;
 
 int Myroot(double a, double b, double c, double& f, double& g) {
+    
     double d = (b * b) - (4 * a * c);
     if (d > 0) 
     {
         f = (((-1 * b) + sqrt(a))) / 2 * a;
         g = (((-1 * b) - sqrt(a))) / 2 * a;
-        cout << "x1 будет равен -   " << f << endl;
-        cout << "x2 будет равен -   " << g << endl;
-        cout << "1" << endl;  
+        return 1;
+        
     }
-
-    if (d = 0) {
-        f = d;
-        cout << "Оба корня совпадают" << "0" << endl;
-
-    }
-
     if (d < 0) {
         g = d;
-        cout << g << endl;
-        cout << "Корней нет" << "- 1" << endl;
+        //cout << g << endl;
+        return -1;
     }
-    return 0;
+            
+    if (d == 0) {
+        f = d;
+        //cout << f << endl;
+        return 0;
+    }
+    
 }
 
 
 int main()
 {
     system("chcp 1251");
-    double f = 0;
-    double d = 0;
+    double f;
+    double d;
 
     cout << "\nВведите число a" << endl;
     double a;
     cin >> a;
-    
+
     cout << "\nВведите число b" << endl;
     double b;
     cin >> b;
@@ -48,7 +47,22 @@ int main()
     double c;
     cin >> c;
 
-    Myroot(a,b,c,d,f);
+    cout << Myroot(a, b, c, d, f);
+    if (Myroot(a, b, c, d, f) == 1) {
+        cout << endl << "x1 будет равен -   " << d << endl;
+        cout << endl << "x2 будет равен -   " << f << endl;
+    }
+    if (Myroot(a, b, c, d, f) == -1) {
+        cout << endl << "Корней нет" << endl;
+    }
+
+    if (Myroot(a, b, c, d, f) == 0) {
+        cout << endl << "Оба корня совпадают 0" << endl;
+    }
+    
+    
+    
+    
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

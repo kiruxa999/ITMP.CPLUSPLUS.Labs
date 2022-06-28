@@ -7,8 +7,8 @@ using namespace std;
 
 int* max_vect(int kc, int *a, int *b) {
 	vector <int> result;
-	mas[i] = c
-	if (kc)
+	for (int i = 0; i < )
+	if ()
 
 	//return result;
 
@@ -27,6 +27,7 @@ int main()
 		cout << c[i] << " ";
 	cout << endl;
 	delete[]c; //Возврат памяти.
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
