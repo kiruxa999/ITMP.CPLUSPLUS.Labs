@@ -5,12 +5,19 @@
 #include <vector>
 using namespace std;
 
-int* max_vect(int kc, int *a, int *b) {
-	vector <int> result;
-	for (int i = 0; i < )
-	if ()
+int* max_vect(int result, int *a, int *b) {
+	//vector <int> mas;
+	int* mas = new int [result];
 
-	//return result;
+	for (int i = 0; i < result; i++) {
+		if (a[i] > b[i]) {
+			mas [i] = a[i];
+		}
+		else {
+			mas[i] = b[i];
+		}
+	}
+	return mas;
 
 }
 
