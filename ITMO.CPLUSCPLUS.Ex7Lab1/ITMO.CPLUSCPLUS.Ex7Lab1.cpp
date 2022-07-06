@@ -2,9 +2,7 @@
 //
 
 #include <iostream>
-#include <consoleapi2.h>
-#include <minwinbase.h>
-#include <winnt.h>
+#include <windows.h>
 using namespace std;
 
 
@@ -47,7 +45,7 @@ Time InputTime()
 
 int main()
 {
-	SetConsoleOutputCP(1251);
+	system("chcp 1251");
 	Time t1 = InputTime();
 	Time t2 = InputTime();
 	Time t3 = SummTime(t1, t2);

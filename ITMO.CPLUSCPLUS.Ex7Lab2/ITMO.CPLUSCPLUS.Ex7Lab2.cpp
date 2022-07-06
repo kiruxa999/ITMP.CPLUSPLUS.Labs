@@ -1,68 +1,66 @@
-﻿// ITMO.CPLUSCPLUS.Ex4.Lab1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// ITMO.CPLUSCPLUS.Ex7Lab2.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
+#include <tuple>
+#include <cmath> 
 using namespace std;
 
-int Myroot(double a, double b, double c, double& f, double& g) {
-    
+struct Root
+{
+    double f = 0;
+    double g = 0;
+    //double a;
+   // double b;
+    //double c;
+};
+
+/*Root InputRoot()
+{
+    Root r;
+    cout << "\nВведите число a" << endl;
+    cin >> r.a;
+    cout << "\nВведите число b" << endl;
+    cin >> r.b;
+    cout << "\nВведите число c" << endl;
+    cin >> r.c;
+    return r;
+}*/
+
+Root Myroot(double a, double b, double c) {
+    Root r2;
     double d = (b * b) - (4 * a * c);
-    if (d > 0) 
+    if (d > 0)
     {
-        f = (((-1 * b) + sqrt(d))) / 2 * a;
-        g = (((-1 * b) - sqrt(d))) / 2 * a;
-        return 1;
-        
+        r2.f = (((-1 * b) + sqrt(d))) / 2 * a;
+        r2.g = (((-1 * b) - sqrt(d))) / 2 * a;
     }
     if (d < 0) {
-        g = d;
-        //cout << g << endl;
-        return -1;
+        r2.g = d;
+        //нет корней 
     }
-            
+
     if (d == 0) {
-        f = d;
-        //cout << f << endl;
-        return 0;
+        r2.g = (-b) / (2 * a);
+        r2.g = r2.f;
     }
+    return r2;
+}
+
+void ShowRoot()
+{
+    //Root r3 = InputRoot();
+    Root r4 = Myroot(1,13,36);
+    cout << "x1 = " << r4.f << " x2 = " << r4.g << endl;
     
 }
+
 
 
 int main()
 {
     system("chcp 1251");
-    double f;
-    double d;
-
-    cout << "\nВведите число a" << endl;
-    double a;
-    cin >> a;
-
-    cout << "\nВведите число b" << endl;
-    double b;
-    cin >> b;
-
-    cout << "\nВведите число c" << endl;
-    double c;
-    cin >> c;
-
-    cout << Myroot(a, b, c, d, f);
-    if (Myroot(a, b, c, d, f) == 1) {
-        cout << endl << "x1 будет равен -   " << d << endl;
-        cout << endl << "x2 будет равен -   " << f << endl;
-    }
-    if (Myroot(a, b, c, d, f) == -1) {
-        cout << endl << "Корней нет" << endl;
-    }
-
-    if (Myroot(a, b, c, d, f) == 0) {
-        cout << endl << "Оба корня совпадают 0" << endl;
-    }
-    
-    
-    
-    
+    ShowRoot();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
