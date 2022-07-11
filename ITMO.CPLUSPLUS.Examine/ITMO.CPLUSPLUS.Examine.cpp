@@ -98,13 +98,13 @@ public:
             h1.SaveAllHuman();
         case 2:
             
-            cout << "Continue ?" << endl;
+            cout << "Continue ? (yes/no)" << endl;
             cin >> choose;
             while (choose == "yes")
             {
                 h1.EnterInfoHuman();
                 h1.SaveAllHuman();
-                cout << "Continue ?" << endl;
+                cout << "Continue ? (yes/no)" << endl;
                 cin >> choose;
             }
         case 0:
