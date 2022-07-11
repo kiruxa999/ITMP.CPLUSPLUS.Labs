@@ -1,0 +1,90 @@
+name - exit
+last_name - : dsd
+phone - : 999
+position - : iid
+
+name - ewer
+last_name - : werwer
+phone - : 33434
+position - : sewr
+
+name - uuuu
+last_name - : uuuu
+phone - : 231
+position - : uurr
+
+name - uwieu
+last_name - : wrtw
+phone - : 435345
+position - : gfdgdf
+
+name - exit
+last_name - : gdfgd
+phone - : 535
+position - : gfdgg
+
+name - dgfdgf
+last_name - : dfgdf
+phone - : 453345
+position - : gddg
+
+name - gdgfdg
+last_name - : dfsfs
+phone - : 23424
+position - : gfgdf
+
+name - exit
+last_name - : dfgdfg
+phone - : 54534
+position - : dgfdfg
+
+name - hhgfh
+last_name - : fghfgh
+phone - : 465
+position - : fhhf
+
+name - exit
+last_name - : jgj
+phone - : 44232
+position - : gdfg
+
+name - exit
+last_name - : dgfg
+phone - : 3534
+position - : gfdd
+
+name - vova
+last_name - : prytkov
+phone - : 888
+position - : student
+
+name - ewrwr
+last_name - : dsfsd
+phone - : 13
+position - : dsf
+
+name - fdfg
+last_name - : efd
+phone - : 432
+position - : fdsg
+
+name - dfgd
+last_name - : dff
+phone - : 342
+position - : dfsdfs
+
+name - exit
+last_name - : dfs
+phone - : 23432
+position - : dfssfd
+
+name - 321
+last_name - : 231
+phone - : 123
+position - : 213
+
+name - exit
+last_name - : asda
+phone - : 123
+position - : ads
+

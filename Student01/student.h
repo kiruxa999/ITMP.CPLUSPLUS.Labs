@@ -1,6 +1,7 @@
 /* student.h */
 #pragma once /* Защита от двойного подключения заголовочного файла */
 #include <string>
+#include <vector>
 using namespace std;
 
 class Student
@@ -12,11 +13,8 @@ public:
 	// Деструктор класса Student
 	~Student();
 
-
-
 	// Конструктор класса Student
 	Student(string, string);
-
 
 	// Установка имени студента
 	void set_name(string);
