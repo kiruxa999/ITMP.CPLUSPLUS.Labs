@@ -117,6 +117,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Практическое з
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ITMO.CPLUSPLUS.Ex13", "ITMO.CPLUSPLUS.Ex13\ITMO.CPLUSPLUS.Ex13.vcxproj", "{53B63AD2-69CF-4C64-8011-EA78275505E4}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test", "Test\Test.vcxproj", "{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -493,6 +495,14 @@ Global
 		{53B63AD2-69CF-4C64-8011-EA78275505E4}.Release|x64.Build.0 = Release|x64
 		{53B63AD2-69CF-4C64-8011-EA78275505E4}.Release|x86.ActiveCfg = Release|Win32
 		{53B63AD2-69CF-4C64-8011-EA78275505E4}.Release|x86.Build.0 = Release|Win32
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Debug|x64.ActiveCfg = Debug|x64
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Debug|x64.Build.0 = Debug|x64
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Debug|x86.ActiveCfg = Debug|Win32
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Debug|x86.Build.0 = Debug|Win32
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Release|x64.ActiveCfg = Release|x64
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Release|x64.Build.0 = Release|x64
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Release|x86.ActiveCfg = Release|Win32
+		{9BD44CF4-2DEB-4BD6-949A-4A60893CF59B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

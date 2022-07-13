@@ -1,34 +1,14 @@
-﻿// ITMO.CPLUSPLUS.Lab10.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Test.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
-#include "triangle.h"
-#include "dot.h"
-#include <math.h>
-using namespace std;
 
 int main()
 {
-    //Должно 25 получиться
-    double xa = -1;
-    double ya = -3;
-
-    double xb = 3;
-    double yb = 4;
-
-    double xc = 5;
-    double yc = -5;
-
-    Dot dot1(xa, ya);
-    Dot dot2(xb, yb);
-    Dot dot3(xc, yc);
-
-    Triangle tri1(dot1, dot2, dot3);
-    cout << tri1.ShowPer(dot1, dot2, dot3) << endl;
-    cout << tri1.ShowSq(dot1, dot2, dot3) << endl;
-
-
-}
+   int а = -5;
+    while (a < 0) {
+        a++;
+    }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
